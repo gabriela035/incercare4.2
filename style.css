@@ -1,0 +1,13 @@
+body { margin: 0; overflow: hidden; font-family: sans-serif; }
+.toolbar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+}
+canvas { display: block; background: #f0f0f0; }
+button { cursor: pointer; padding: 8px 12px; }
