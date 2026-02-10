@@ -26,3 +26,40 @@ const MovieList = () => {
 };
 
 export default MovieList;
+
+altele
+const dramas = moviesData.filter(movie => movie.genre === "Drama");
+
+return (
+  <div>
+    {dramas.map(movie => <MovieCard key={movie.id} {...movie} />)}
+  </div>
+)
+
+
+
+// Convert rating string "8.3" to number 8.3 for comparison
+const topMovie = moviesData.reduce((prev, current) => 
+  (parseFloat(prev.rating) > parseFloat(current.rating)) ? prev : current
+);
+
+return (
+  <div>
+     <h2>Best Movie: {topMovie.title}</h2>
+     <MovieCard {...topMovie} />
+  </div>
+)
+
+
+// Creates a set of unique genres: ["Drama", "Action", "Comedy"]
+const genres = [...new Set(moviesData.map(item => item.genre))];
+
+return (
+  <div className="genre-tags">
+    {genres.map(g => <span className="tag">{g}</span>)}
+  </div>
+)
+
+
+
+
